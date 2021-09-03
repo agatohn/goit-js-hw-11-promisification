@@ -9,10 +9,9 @@ const toggleUserState = (allUsers, userName) => {
   const updatedUsers = allUsers.map(user =>
     user.name === userName ? { ...user, active: !user.active } : user,
   );
-  const promise = new Promise(resolve => {
+  return new Promise(resolve => {
     resolve(updatedUsers);
   });
-  return promise;
 };
 
 const logger = updatedUsers => console.table(updatedUsers);
